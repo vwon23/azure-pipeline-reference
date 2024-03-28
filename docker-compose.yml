@@ -1,0 +1,13 @@
+version: "2"
+services:
+  app:
+    container_name: ecs-services-container
+    build:
+      # Build an image from the Dockerfile in the current directory
+      context: .
+    ports:
+      - 8080:80
+    environment:
+      PORT: "80"
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
